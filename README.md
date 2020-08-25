@@ -44,26 +44,27 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 
 ### Option 2: Building the tools locally
 1. Recommend CentOS7 or Ubuntu20 to build
-  a. CentOS7 : Reference the Dockerfiles and READMEs for the separate tools on the build steps and dependencies.
-  ```
-  OpenROAD-flow/tools/OpenROAD/Dockerfile
-  OpenROAD-flow/tools/yosys/Dockerfile
-  OpenROAD-flow/tools/TritonRoute/Dockerfile
-  ```
-  b. Ubuntu20 : Reference the following command
-  ```
-  apt install build-essential
-  apt install tcl-dev
-  apt install libreadline6-dev
-  apt install bison
-  apt install flex
-  apt install libffi-dev
-  apt install cmake
-  apt install libboost-all-dev
-  apt install swig
-  apt install klayout
-  ```
-  See the [KLayout](https://www.klayout.de) instructions for installing KLayout from source.
+
+a. CentOS7 : Reference the Dockerfiles and READMEs for the separate tools on the build steps and dependencies.
+```
+OpenROAD-flow/tools/OpenROAD/Dockerfile
+OpenROAD-flow/tools/yosys/Dockerfile
+OpenROAD-flow/tools/TritonRoute/Dockerfile
+```
+b. Ubuntu20 : Reference the following command
+```
+apt install build-essential
+apt install tcl-dev
+apt install libreadline6-dev
+apt install bison
+apt install flex
+apt install libffi-dev
+apt install cmake
+apt install libboost-all-dev
+apt install swig
+apt install klayout
+```
+See the [KLayout](https://www.klayout.de) instructions for installing KLayout from source.
 
 2. Run the build script
 ```
