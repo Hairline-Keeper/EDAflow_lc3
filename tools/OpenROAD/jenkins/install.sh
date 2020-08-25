@@ -9,14 +9,14 @@ cmake --build build -j 4
 # Capture the commit we are testing for use in flow testing
 commit=`git rev-parse --verify HEAD`
 
-# Build a subdir 'flow' to run EDAflow_lc3-OpenRoadFlow tests in
+# Build a subdir 'flow' to run EDAflow_lc3 tests in
 if [[ ! -d flow ]]; then
-    git clone -b openroad https://github.com/Hairline-Keeper/EDAflow_lc3-OpenRoadFlow.git flow
+    git clone -b openroad https://github.com/Hairline-Keeper/EDAflow_lc3.git flow
 fi
 
 cd flow
 
-# Get the head of the openroad branch of EDAflow_lc3-OpenRoadFlow
+# Get the head of the openroad branch of EDAflow_lc3
 git pull --ff-only
 git submodule update --init --recursive
 

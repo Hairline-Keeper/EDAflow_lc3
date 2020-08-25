@@ -1,5 +1,5 @@
-# EDAflow_lc3-OpenRoadFlow
-Edaflow_lc3-openroadflow is an EDA tool chain provided to courses of the School of Computer Software at Shenzhen University, which has been able to correctly generate GDS for LC-3 processors.The original project was OpenRoad-Flow.You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow-public/blob/master/README.md).
+# EDAflow_lc3
+Edaflow_lc3-openroadflow is an EDA tool chain provided to courses of the School of Computer Software at Shenzhen University, which has been able to correctly generate GDS for LC-3 processors.The original project was OpenRoad-Flow.You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-public/blob/master/README.md).
 
 ## Code Organization
 This repository serves as an example RTL-to-GDS flow using the OpenROAD tools.
@@ -28,9 +28,9 @@ This build option leverages a multi-step docker flow to install the tools and
 dependencies to a runner image. To follow these instructions, you must have
 docker installed, permissions to run docker, and docker container network access
 enabled. This step will create a runner image tagged as `openroad/flow`.
-1.  Clone the EDAflow_lc3-OpenRoadFlow repository
+1.  Clone the EDAflow_lc3 repository
 ```
-git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3-OpenRoadFlow.git
+git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3.git
 ```
 2. Ensure your docker daemon is running and `docker` is in your PATH, then run
 the docker build.
@@ -47,9 +47,9 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 
 a. CentOS7 : Reference the Dockerfiles and READMEs for the separate tools on the build steps and dependencies.
 ```
-EDAflow_lc3-OpenRoadFlow/tools/OpenROAD/Dockerfile
-EDAflow_lc3-OpenRoadFlow/tools/yosys/Dockerfile
-EDAflow_lc3-OpenRoadFlow/tools/TritonRoute/Dockerfile
+EDAflow_lc3/tools/OpenROAD/Dockerfile
+EDAflow_lc3/tools/yosys/Dockerfile
+EDAflow_lc3/tools/TritonRoute/Dockerfile
 ```
 b. Ubuntu20 : Reference the following command
 ```
@@ -68,7 +68,7 @@ See the [KLayout](https://www.klayout.de) instructions for installing KLayout fr
 
 2. Run the build script
 ```
-cd EDAflow_lc3-OpenRoadFlow
+cd EDAflow_lc3
 ./build_openroad.sh
 ```
 3. Update your shell environment
