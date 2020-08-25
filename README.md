@@ -81,7 +81,7 @@ source setup_env.sh
 ```
 yosys -h
 openroad -h
-TritonRoute -h (error is normal)
+TritonRoute -h (Error is acceptable)
 klayout -h
 ```
 
