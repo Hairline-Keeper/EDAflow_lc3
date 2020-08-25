@@ -54,7 +54,7 @@ installation instructions.
 ### Option 1: Installing build exports
 1.  Clone the OpenROAD-flow repository
 ```
-git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow.git
+git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3-OpenRoadFlow.git
 ```
 2. Navigate to the "Releases" tab and download the latest release
 3. Extract the tar to `OpenROAD-flow/tools/OpenROAD`
@@ -70,7 +70,7 @@ docker installed, permissions to run docker, and docker container network access
 enabled. This step will create a runner image tagged as `openroad/flow`.
 1.  Clone the OpenROAD-flow repository
 ```
-git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow.git
+git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3-OpenRoadFlow.git
 ```
 2. Ensure your docker daemon is running and `docker` is in your PATH, then run
 the docker build.
