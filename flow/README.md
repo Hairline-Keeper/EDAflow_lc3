@@ -28,12 +28,6 @@ design first to validate your flow and tool setup.
 To add a new design, we recommend looking at the included designs for examples
 of how to set one up.
 
-:warning: Please refer to the known issues and limitations
-[document](docs/Known%20Issues%20and%20Limitations.pdf) for information on
-conditioning your design/files for the flow. We are working to reduce the issues
-and limitations, but it will take time.
-
-
 ## Platforms
 EDAflow_lc3-OpenRoadFlow supports Verilog to GDS for the following open platforms:
 * Nangate45 / FreePDK45
