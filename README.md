@@ -1,4 +1,5 @@
 # EDAflow_lc3-OpenRoadFlow
+Edaflow_lc3-openroadflow is an EDA tool chain provided to XXX courses at The School of Computer Software, Shenzhen University, which has been able to correctly generate GDS for LC-3 processors.The original project was OpenRoad-Flow.You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow-public/blob/master/README.md).
 
 ## Code Organization
 This repository serves as an example RTL-to-GDS flow using the OpenROAD tools.
@@ -87,5 +88,3 @@ klayout -h
 ## Using the flow
 See the flow [README](flow) for details about the flow and how
 to run designs through the flow
-
-You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow-public/blob/master/README.md).
