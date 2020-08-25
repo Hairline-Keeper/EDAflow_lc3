@@ -43,7 +43,7 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 ```
 
 ### Option 2: Building the tools locally
-1. 
+1. Recommend CentOS7 or Ubuntu20 to build
   a. CentOS7 : Reference the Dockerfiles and READMEs for the separate tools on the build steps and dependencies.
   ```
   OpenROAD-flow/tools/OpenROAD/Dockerfile
@@ -74,6 +74,13 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 source setup_env.sh
 ```
 `klayout` must be added to the path manually.
+
+## Checking the environment
+```
+yosys -h
+openroad -h
+TritonRoute -h (error is normal)
+```
 
 ## Using the flow
 See the flow [README](flow) for details about the flow and how
