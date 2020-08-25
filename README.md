@@ -67,6 +67,7 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 
 2. Run the build script
 ```
+cd EDAflow_lc3-OpenRoadFlow
 ./build_openroad.sh
 ```
 3. Update your shell environment
@@ -80,6 +81,7 @@ source setup_env.sh
 yosys -h
 openroad -h
 TritonRoute -h (error is normal)
+klayout -h
 ```
 
 ## Using the flow
