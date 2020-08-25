@@ -4,33 +4,11 @@
 
 ## Quick Start
 ```
-# Clone the repository and submodules
-git clone --recursive https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow
-
-# Build the OpenROAD app
-cd OpenROAD
-make
-
-# Setup your environment
-source setup_env.sh
-
 # Implement the example gcd design
 cd flow
 make
 ```
 The resulting GDS will be available at `flow/results/nangate45/gcd/6_final.gds`
-
-## Setting up the Flow
-
-1. Clone the repository
-```
-git clone https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow
-cd EDAflow_lc3-OpenRoadFlow/flow
-```
-2. The `openroad` app must be setup to implement designs or run tests. See setup
-   instructions in the repository [README](../README.md#Setup)
-3. Setup your shell environment. If the tools are built locally using the setup
-   [instructions](../README.md#Setup), you can run `source setup_env.sh`
 
 ## Designs
 Sample design configurations are available in the `designs` directory. You can
@@ -80,30 +58,3 @@ example of how to set up a new platform for EDAflow_lc3-OpenRoadFlow.
 ## Implement the Design
 Run `make` to perform Verilog to GDS. The final output will be located at
 `flow/results/{platform}/{design_name}/6_final.gds`
-
-## Miscellaneous
-### tiny-tests - easy to add, single concern, single Verilog file
-
-The tiny-tests are have been designed with two design goals in mind:
-
-1. It should be trivial to add a new test: simply add a tiny standalone
-   Verilog file to `EDAflow_lc3-OpenRoadFlow/flow/designs/src/tiny-tests`
-2. Each test should be as small and as standalone as possible and be a single
-   concern test.
-
-To run a test:
-
-```
-make DESIGN_NAME=SmallPinCount DESIGN_CONFIG=`pwd`/designs/tiny-tests.mk
-```
-
-### nangate45 smoke-test harness for top level Verilog designs
-
-1. Drop your Verilog files into designs/src/harness
-2. Start the workflow:
-
-```
-make DESIGN_NAME=TopLevelName DESIGN_CONFIG=`pwd`/designs/harness.mk
-```
-
-TIP! Start with a small tiny submodule in your design with few pins
