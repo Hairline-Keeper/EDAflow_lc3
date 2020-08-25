@@ -4,8 +4,8 @@ DESIGN=$1
 PLATFORM=$2
 
 user_id="$(id -u ${USER}):$(id -g ${USER})"
-flow_mount="$(pwd)/flow:/OpenROAD-flow/flow"
-tr_mount="$(pwd)/flow/tools/TritonRoute14:/OpenROAD-flow/flow/tools/TritonRoute14"
+flow_mount="$(pwd)/flow:/EDAflow_lc3-OpenRoadFlow/flow"
+tr_mount="$(pwd)/flow/tools/TritonRoute14:/EDAflow_lc3-OpenRoadFlow/flow/tools/TritonRoute14"
 
 if [ "${PLATFORM}" = "gf14" ]; then
   docker_tag="openroad/flow14"

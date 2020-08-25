@@ -5,12 +5,12 @@ RUN yum group install -y "Development Tools" && \
     yum update -y && yum install -y libffi-devel python3 tcl-devel which time && \
     yum localinstall https://www.klayout.org/downloads/CentOS_7/klayout-0.26.3-0.x86_64.rpm -y
 
-WORKDIR /OpenROAD-flow
-RUN mkdir -p /OpenROAD-flow
+WORKDIR /EDAflow_lc3-OpenRoadFlow
+RUN mkdir -p /EDAflow_lc3-OpenRoadFlow
 
 COPY --from=openroad /OpenROAD/build ./tools/build/OpenROAD
 COPY --from=openroad/yosys /build ./tools/build/yosys
 COPY --from=openroad/tritonroute14 /build/TritonRoute14 ./tools/build/TritonRoute/TritonRoute14
 COPY ./setup_env.sh .
 COPY ./flow ./flow
-RUN chmod o+rw -R /OpenROAD-flow/flow
+RUN chmod o+rw -R /EDAflow_lc3-OpenRoadFlow/flow

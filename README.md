@@ -1,5 +1,5 @@
 # EDAflow_lc3-OpenRoadFlow
-You can get more information by looking at [OpenROAD-flow-public README](https://github.com/The-OpenROAD-Project/OpenROAD-flow-public/blob/master/README.md).
+You can get more information by looking at [EDAflow_lc3-OpenRoadFlow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow-public/blob/master/README.md).
 
 ## Code Organization
 This repository serves as an example RTL-to-GDS flow using the OpenROAD tools.
@@ -28,7 +28,7 @@ This build option leverages a multi-step docker flow to install the tools and
 dependencies to a runner image. To follow these instructions, you must have
 docker installed, permissions to run docker, and docker container network access
 enabled. This step will create a runner image tagged as `openroad/flow`.
-1.  Clone the OpenROAD-flow repository
+1.  Clone the EDAflow_lc3-OpenRoadFlow repository
 ```
 git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3-OpenRoadFlow.git
 ```
@@ -47,9 +47,9 @@ docker run -it -u $(id -u ${USER}):$(id -g ${USER}) openroad/flow bash
 
 a. CentOS7 : Reference the Dockerfiles and READMEs for the separate tools on the build steps and dependencies.
 ```
-OpenROAD-flow/tools/OpenROAD/Dockerfile
-OpenROAD-flow/tools/yosys/Dockerfile
-OpenROAD-flow/tools/TritonRoute/Dockerfile
+EDAflow_lc3-OpenRoadFlow/tools/OpenROAD/Dockerfile
+EDAflow_lc3-OpenRoadFlow/tools/yosys/Dockerfile
+EDAflow_lc3-OpenRoadFlow/tools/TritonRoute/Dockerfile
 ```
 b. Ubuntu20 : Reference the following command
 ```
@@ -90,10 +90,10 @@ See the flow [README](flow) for details about the flow and how
 to run designs through the flow
 
 ## License
-The OpenROAD-flow repository (build and run scripts) has a BSD 3-Clause License.
+The EDAflow_lc3-OpenRoadFlow repository (build and run scripts) has a BSD 3-Clause License.
 The flow relies on several tools, platforms and designs that each have their own
 licenses:
-- Find the tool license at: `OpenROAD-flow/tools/{tool}/` or
-`OpenROAD-flow/tools/OpenROAD/src/{tool}/`
-- Find the platform license at: `OpenROAD-flow/flow/platforms/{platform}/`
-- Find the design license at: `OpenROAD-flow/flow/designs/src/{design}/`
+- Find the tool license at: `EDAflow_lc3-OpenRoadFlow/tools/{tool}/` or
+`EDAflow_lc3-OpenRoadFlow/tools/OpenROAD/src/{tool}/`
+- Find the platform license at: `EDAflow_lc3-OpenRoadFlow/flow/platforms/{platform}/`
+- Find the design license at: `EDAflow_lc3-OpenRoadFlow/flow/designs/src/{design}/`

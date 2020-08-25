@@ -1,11 +1,11 @@
 
-## OpenROAD-flow
+## EDAflow_lc3-OpenRoadFlow
 ![alt text](docs/flow.png "flow")
 
 ## Quick Start
 ```
 # Clone the repository and submodules
-git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow
+git clone --recursive https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow
 
 # Build the OpenROAD app
 cd OpenROAD
@@ -24,8 +24,8 @@ The resulting GDS will be available at `flow/results/nangate45/gcd/6_final.gds`
 
 1. Clone the repository
 ```
-git clone https://github.com/The-OpenROAD-Project/OpenROAD-flow
-cd OpenROAD-flow/flow
+git clone https://github.com/The-OpenROAD-Project/EDAflow_lc3-OpenRoadFlow
+cd EDAflow_lc3-OpenRoadFlow/flow
 ```
 2. The `openroad` app must be setup to implement designs or run tests. See setup
    instructions in the repository [README](../README.md#Setup)
@@ -54,14 +54,14 @@ and limitations, but it will take time.
 
 
 ## Platforms
-OpenROAD-flow supports Verilog to GDS for the following open platforms:
+EDAflow_lc3-OpenRoadFlow supports Verilog to GDS for the following open platforms:
 * Nangate45 / FreePDK45
 
 These platforms have a permissive license which allows us to redistribute the
 PDK and OpenROAD platform-specific files. The platform files and license(s) are
 located in `platforms/{platform}`.
 
-OpenROAD-flow also supports the following commercial platforms:
+EDAflow_lc3-OpenRoadFlow also supports the following commercial platforms:
 * TSMC65LP
 * GF14 (in progress)
 
@@ -75,7 +75,7 @@ about the design. See sample configurations in the `design` directory.
 
 ### Adding a New Platform
 At this time, we recommend looking at the [Nangate45](platforms/nangate45) as an
-example of how to set up a new platform for OpenROAD-flow.
+example of how to set up a new platform for EDAflow_lc3-OpenRoadFlow.
 
 ## Implement the Design
 Run `make` to perform Verilog to GDS. The final output will be located at
@@ -87,7 +87,7 @@ Run `make` to perform Verilog to GDS. The final output will be located at
 The tiny-tests are have been designed with two design goals in mind:
 
 1. It should be trivial to add a new test: simply add a tiny standalone
-   Verilog file to `OpenROAD-flow/flow/designs/src/tiny-tests`
+   Verilog file to `EDAflow_lc3-OpenRoadFlow/flow/designs/src/tiny-tests`
 2. Each test should be as small and as standalone as possible and be a single
    concern test.
 
