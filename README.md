@@ -88,12 +88,3 @@ klayout -h
 ## Using the flow
 See the flow [README](flow) for details about the flow and how
 to run designs through the flow
-
-## License
-The EDAflow_lc3-OpenRoadFlow repository (build and run scripts) has a BSD 3-Clause License.
-The flow relies on several tools, platforms and designs that each have their own
-licenses:
-- Find the tool license at: `EDAflow_lc3-OpenRoadFlow/tools/{tool}/` or
-`EDAflow_lc3-OpenRoadFlow/tools/OpenROAD/src/{tool}/`
-- Find the platform license at: `EDAflow_lc3-OpenRoadFlow/flow/platforms/{platform}/`
-- Find the design license at: `EDAflow_lc3-OpenRoadFlow/flow/designs/src/{design}/`
