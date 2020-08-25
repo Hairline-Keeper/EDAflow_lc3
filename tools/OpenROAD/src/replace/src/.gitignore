@@ -1,0 +1,8 @@
+*.o
+*.swo
+*.swi
+*.nfs*
+RePlAce
+tags
+replace_wrap.cpp
+.gdb_history

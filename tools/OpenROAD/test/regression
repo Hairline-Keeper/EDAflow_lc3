@@ -1,0 +1,87 @@
+#!/bin/sh
+# The next line is executed by /bin/sh, but not Tcl \
+exec tclsh $0 ${1+"$@"}
+
+# Copyright (c) 2019, Parallax Software, Inc.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# Usage: regression tool [tool2...]
+# where tool is name of an openroad tool.
+
+# Directory containing tests.
+set test_dir [file dirname [file normalize [info script]]]
+set openroad_dir [file dirname $test_dir]
+
+source [file join $test_dir "regression.tcl"]
+source [file join $test_dir "regression_tests.tcl"]
+
+set tool_scripts {"init_fp" "src/init_fp/test/regression" \
+		    "dbSta" "src/dbSta/test/regression" \
+		    "IoPlacer" "src/ioPlacer/test/regression" \
+		    "PDNgen" "src/pdngen/test/regression" \
+		    "TritonMacroPlace" "src/TritonMacroPlace/test/regression" \
+		    "Resizer" "src/resizer/test/regression" \
+		    "Replace" "src/replace/test/regression" \
+		    "TritonCTS" "src/TritonCTS/test/regression" \
+		    "OpenDP" "src/opendp/test/regression" \
+		    "FastRoute" "src/FastRoute/test/regression" \
+		    "TapCell" "src/tapcell/test/regression" \
+		    "OpenPhySyn" "src/OpenPhySyn/test/regression" \
+		    "PDNSim" "src/PDNSim/test/regression" \
+		  }
+
+foreach tool $argv {
+  if { !([string equal -nocase $tool "openroad"]
+	 || [lsearch -nocase $tool_scripts $tool] != -1) } {
+    puts "$tool is not an openroad tool name."
+  }
+}
+
+proc run_tool_tests { tool } {
+  global argv tool_scripts
+  return [expr { $argv == {} || [lsearch -nocase $argv $tool] != -1 }]
+}
+
+set tool_errors 0
+
+# Flow based tests (MIA)
+if { [run_tool_tests "openroad"] } {
+  puts "------------------------------------------------------"
+  puts "OpenROAD"
+  incr tool_errors [regression_body {}]
+}
+
+foreach {tool script} $tool_scripts {
+  if { [run_tool_tests $tool] } {
+    puts "------------------------------------------------------"
+    puts $tool
+    if { [catch "exec [file join $openroad_dir $script] >@stdout"] } {
+      incr tool_errors
+    }
+  }
+}
+
+puts "------------------------------------------------------"
+if { $tool_errors } {
+  puts "Found $tool_errors tool regression failures."
+} else {
+  puts "Passed all tool regressions."
+}
+
+exit $tool_errors
+
+# Local Variables:
+# mode:tcl
+# End:

@@ -1,0 +1,54 @@
+############################################################################
+########################### Project Setup ##################################
+############################################################################
+
+# Setting CMake version properly to ensure correct policies behavior
+cmake_minimum_required(VERSION 3.14...3.16)
+set(CMAKE_CXX_STANDARD 11)
+
+# Setting up OpenDB project
+project(OpenDB VERSION 0.0.1
+  LANGUAGES CXX)
+
+# Configure build version
+configure_file (
+    "${PROJECT_SOURCE_DIR}/include/opendb/version.hh.in"
+    "${PROJECT_BINARY_DIR}/include/opendb/version.hh"
+)
+
+find_package(TCL)
+
+find_package(Boost)
+
+############################################################################
+################################# Targets ##################################
+############################################################################
+
+add_subdirectory(src/db)
+add_subdirectory(src/defin)
+add_subdirectory(src/defout)
+add_subdirectory(src/lef)
+add_subdirectory(src/lefin)
+add_subdirectory(src/lefout)
+add_subdirectory(src/def)
+add_subdirectory(src/zutil)
+add_subdirectory(src/zlib)
+add_subdirectory(src/tm)
+
+############################################################################
+################################# SWIG #####################################
+############################################################################
+
+find_package(SWIG REQUIRED 3.0)
+
+include(${SWIG_USE_FILE})
+
+option(BUILD_PYTHON "Build Python SWIG module" ON)
+if(NOT OPENROAD_BUILD AND BUILD_PYTHON)
+    add_subdirectory(src/swig/python)
+endif()
+
+option(BUILD_TCL "Build TCL SWIG module" ON)
+if(NOT OPENROAD_BUILD AND BUILD_TCL)
+    add_subdirectory(src/swig/tcl)
+endif()

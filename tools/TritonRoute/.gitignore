@@ -1,0 +1,6 @@
+*.o
+
+build
+build/*.*
+Makefile
+*.log

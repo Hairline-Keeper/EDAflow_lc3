@@ -1,0 +1,23 @@
+# Put tool specific ignores in the tool directory, not here.
+
+*.o
+*.a
+*.lo
+*.la
+*.gcov
+*.gcda
+*.gcno
+*.rej
+*.orig
+TAGS
+*~
+\#*#
+.~lock.*#
+.DS_Store
+Makefile
+
+include/openroad/Version.hh
+
+build
+test/results
+flow
