@@ -7,6 +7,9 @@
 # Implement the example gcd design
 cd flow
 make
+
+# check the GDS
+klayout results/nangate45/gcd/6_final.gds
 ```
 The resulting GDS will be available at `flow/results/nangate45/gcd/6_final.gds`
 
