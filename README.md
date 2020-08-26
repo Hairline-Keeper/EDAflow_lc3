@@ -35,6 +35,7 @@ git clone --recursive https://github.com/Hairline-Keeper/EDAflow_lc3.git
 2. Ensure your docker daemon is running and `docker` is in your PATH, then run
 the docker build.
 ```
+cd EDAflow_lc3
 ./build_openroad.sh
 ```
 3. Start an interactive shell in a docker container using your user credentials
