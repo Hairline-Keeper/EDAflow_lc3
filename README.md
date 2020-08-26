@@ -1,5 +1,5 @@
 # EDAflow_lc3
-EDAflow_lc3 is an EDA tool chain provided to courses of the School of Computer Software at Shenzhen University, which has been able to correctly generate GDS for [chisel_lc3](https://github.com/Hairline-Keeper/chisel_lc3).The original project was OpenRoad-Flow.You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-public/blob/master/README.md).
+EDAflow_lc3 is an EDA tool chain provided to courses of the School of Computer Software at Shenzhen University, which prepares to generate GDS for RTL of [chisel_lc3](https://github.com/Hairline-Keeper/chisel_lc3).The original project was OpenRoad-Flow.You can get more information by looking at [OpenRoad-flow-public README](https://github.com/The-OpenROAD-Project/EDAflow_lc3-public/blob/master/README.md).
 
 ## Code Organization
 This repository serves as an example RTL-to-GDS flow using the OpenROAD tools.
