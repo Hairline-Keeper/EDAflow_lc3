@@ -81,7 +81,7 @@ source setup_env.sh
 ```
 yosys -h
 openroad -h
-TritonRoute -h (Error is acceptable)
+TritonRoute -h ("Error reading param file!!!" is acceptable)
 klayout -h
 ```
 
