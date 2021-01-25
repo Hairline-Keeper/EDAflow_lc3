@@ -447,7 +447,139 @@ clean_finish:
 	rm -rf $(REPORTS_DIR)/6_*.rpt
 	rm -f  $(LOG_DIR)/6_*
 
+# ==============================================================================
+#  GDS
+# ==============================================================================
 
+gds: $(RESULTS_DIR)/2_1_floorplan.gds \
+     $(RESULTS_DIR)/2_2_floorplan_io.gds \
+	 $(RESULTS_DIR)/2_3_floorplan_tdms.gds \
+	 $(RESULTS_DIR)/2_4_floorplan_macro.gds \
+	 $(RESULTS_DIR)/2_5_floorplan_tapcell.gds \
+	 $(RESULTS_DIR)/2_6_floorplan_pdn.gds \
+	 $(RESULTS_DIR)/2_floorplan.gds \
+	 $(RESULTS_DIR)/3_1_place_gp.gds \
+	 $(RESULTS_DIR)/3_2_place_resized.gds \
+	 $(RESULTS_DIR)/3_3_place_dp.gds \
+	 $(RESULTS_DIR)/3_place.gds \
+	 $(RESULTS_DIR)/4_1_cts_prefillcell.gds \
+	 $(RESULTS_DIR)/4_cts.gds \
+	 $(RESULTS_DIR)/5_route.gds
+	
+$(RESULTS_DIR)/2_1_floorplan.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_1_floorplan.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_1_floorplan.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+	 
+$(RESULTS_DIR)/2_2_floorplan_io.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_2_floorplan_io.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_2_floorplan_io.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/2_3_floorplan_tdms.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_3_floorplan_tdms.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_3_floorplan_tdms.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/2_4_floorplan_macro.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_4_floorplan_macro.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_4_floorplan_macro.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/2_5_floorplan_tapcell.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_5_floorplan_tapcell.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_5_floorplan_tapcell.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/2_6_floorplan_pdn.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_6_floorplan_pdn.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_6_floorplan_pdn.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/2_floorplan.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/2_floorplan.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/2_floorplan.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/3_1_place_gp.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/3_1_place_gp.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/3_1_place_gp.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/3_2_place_resized.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/3_2_place_resized.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/3_2_place_resized.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/3_3_place_dp.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/3_3_place_dp.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/3_3_place_dp.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/3_place.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/3_place.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/3_place.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/4_1_cts_prefillcell.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/4_1_cts_prefillcell.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/4_1_cts_prefillcell.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/4_cts.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/4_cts.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/4_cts.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+$(RESULTS_DIR)/5_route.gds: $(OBJECTS_DIR)/klayout.lyt $(GDS_FILES) $(RESULTS_DIR)/5_route.def
+	($(TIME_CMD) klayout -zz -rd design_name=$(DESIGN_NAME) \
+	        -rd in_def=$(RESULTS_DIR)/5_route.def \
+	        -rd in_gds="$(GDS_FILES)" \
+	        -rd out_gds=$@ \
+	        -rd tech_file=$(OBJECTS_DIR)/klayout.lyt \
+	        -rm $(UTILS_DIR)/def2gds.py)
+
+clean_gds:
+	rm -rf $(RESULTS_DIR)/*.gds
 
 # ==============================================================================
 #  __  __ ___ ____   ____
@@ -466,10 +598,10 @@ clean:
 	@echo
 	@echo "Make clean disabled."
 	@echo "Use make clean_all or clean individual steps:"
-	@echo "  clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish"
+	@echo "  clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish clean_gds"
 	@echo
 
-clean_all: clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish
+clean_all: clean_synth clean_floorplan clean_place clean_cts clean_route clean_finish clean_gds
 	rm -rf $(OBJECTS_DIR)
 
 nuke: clean_test clean_issues
